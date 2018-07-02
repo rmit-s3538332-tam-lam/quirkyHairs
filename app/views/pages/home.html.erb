@@ -6,23 +6,10 @@
   <%=  submit_tag 'Scan',class:'btn btn-info btn-lg btn-submit'  %>
 </div>
 <% end %>
-
-
 <div class = "container">
-  <% if !@ingredients.blank? %>
-    <% if @isNotSafe %>
-      <p>Product contains: </p>
-    <% else %>
-      <p>Product is safe</p>
-    <% end %>
-    <% if @uniqFoundIngredients %>
-      <% @uniqFoundIngredients.each do |ingredients|%>
-        <p><%=ingredients %></p>
-      <% end %>
-
-    <% end%>
-  <% end%>
-
-
+   <%= render 'layouts/message'%>
 </div>
+
+
+
 

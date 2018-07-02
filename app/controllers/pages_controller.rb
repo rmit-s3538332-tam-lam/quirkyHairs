@@ -2,10 +2,20 @@ class PagesController < ApplicationController
   def home
     @ingredients = params[:ingredients]
     @uniqFoundIngredients = getScanResult(@ingredients)
-    @foundList = ""
-    if  @uniqFoundIngredients.any?
-      @isNotSafe = true
+    if !@ingredients.blank?
+      if  !@uniqFoundIngredients.any?
+      flash.now[:success] = "Item does not contain any common harmful ingredients"
+      
+    else
+      message = "Item contains "
+      @uniqFoundIngredients.each {|ingredients| message << " #{ingredients}, "}
+      if message[-2]=  ','
+         message[-2]= ''
+      end
+      flash.now[:danger] = message
     end
+    end
+    
   end
   def bad_ingredient
     
