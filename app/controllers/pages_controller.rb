@@ -7,7 +7,8 @@ class PagesController < ApplicationController
       @isNotSafe = true
     end
   end
-  
+
+  private
   def getScanResult(ingredients)
     @badSulfates = ["Alkylbenzene Sulfonate","Alkyl Benzene Sulfonate","Ammonium Laureth Sulfate","Ammonium Lauryl Sulfate","Ammonium Xylenesulfonate",
       "Sodium C14-16 Olefin Sulfonate","Sodium Cocoyl Sarcosinate","Sodium Laureth Sulfate","Sodium Lauryl Sulfate","Sodium Lauryl Sulfoacetate",
