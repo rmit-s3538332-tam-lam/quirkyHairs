@@ -12,3 +12,16 @@
 #logo:hover{
   text-decoration:none;
 }
+#input_area{
+  height:150px;
+  resize:none;
+}
+.form-control:focus{border-color: #5bc0de;  box-shadow: none; -webkit-box-shadow: none;} 
+.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+
+
+@media (min-width: 1200px) {
+  .container {
+    width: 800px;
+  }
+}
