@@ -1,0 +1,29 @@
+
+<%= form_tag do %>
+  <% if(@ingredients)%>
+    <%=text_area_tag 'ingredients', @ingredients  %>
+  <% else %>
+    <%=text_area_tag 'ingredients', 'Enter the list of ingredients here'  %>
+  <% end%>
+  <%=  submit_tag 'Scan'  %>
+
+<% end %>
+<div>
+  <% if !@ingredients.blank? %>
+    <% if @isNotSafe %>
+      <p>Product contains: </p>
+    <% else %>
+      <p>Product is safe</p>
+    <% end %>
+    <% if @uniqFoundIngredients %>
+      <% @uniqFoundIngredients.each do |ingredients|%>
+        <p><%=ingredients %></p>
+      <% end %>
+
+    <% end%>
+  <% end%>
+
+
+
+</div>
+
